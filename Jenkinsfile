@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        withCredentials([usernamePassword(credentialsId: 'docker-cred', 
+                        withCredentials([usernamePassword(credentialsId: 'dockercred', 
                                                          usernameVariable: 'DOCKER_USERNAME', 
                                                          passwordVariable: 'DOCKER_PASSWORD')]) {
                             // Explicit login before push
