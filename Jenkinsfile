@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GIT_REPOSITORY_URL = 'https://github.com/MysteriousCod/docker_jenkins_demo.git'
-        DOCKER_IMAGE_NAME = 'MysteriousCod/docker_jenkins_demo'
+        DOCKER_IMAGE_NAME = 'mysteriouscod/docker_jenkins_demo'
         IMAGE_TAG = '1.0'
     }
 
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        docker build("${DOCKER_IMAGE_NAME}:${IMAGE_TAG}")
+                        docker.build("${DOCKER_IMAGE_NAME}:${IMAGE_TAG}")
                     } catch (Exception e) {
                         echo "Failed to build Docker image: ${e.message}"
                         error "Failed to build Docker image"
