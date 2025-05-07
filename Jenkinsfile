@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         GIT_REPOSITORY_URL = 'https://github.com/MysteriousCod/docker_jenkins_demo.git'
-        DOCKER_IMAGE_NAME = 'mysteriouscod/docker_jenkins_demo'
+        DOCKER_IMAGE_NAME = 'ashnitro/docker_jenkins_demo'
         IMAGE_TAG = '1.0'
     }
 
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        withCredentials([usernamePassword(credentialsId: 'my-docker-hub-credentials-id', 
+                        withCredentials([usernamePassword(credentialsId: 'docker-cred', 
                                                          usernameVariable: 'DOCKER_USERNAME', 
                                                          passwordVariable: 'DOCKER_PASSWORD')]) {
                             // Explicit login before push
